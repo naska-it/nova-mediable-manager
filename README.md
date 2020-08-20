@@ -12,7 +12,7 @@ Laravel Nova Media Manager and Field to manage Polymorphic ManyToMany Relationsh
 * [Alternatives](#alternatives)
 * [Preview](#examples)
 
-![Manager](../assets/manager-1..gif)
+![Manager](../demo/manager-1..gif)
 
 ## Install
 ```bash
@@ -121,6 +121,6 @@ What I was using Before
 
 ## Examples
 
-![Manager](../assets/manager-1..gif)
+![Manager](../demo/manager-1..gif)
 
-![Field](../assets/mediable-field.gif)
+![Field](../demo/mediable-field.gif)
