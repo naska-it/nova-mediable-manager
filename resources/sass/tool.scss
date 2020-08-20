@@ -1,0 +1,232 @@
+.laravel-mediable-manager {
+    .manager-sidebar{
+        /* position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 30%;
+        background: var(--white);
+        max-width: 50%;
+        overflow: hidden;
+        padding: 10px;
+        border: 1px solid;
+        border-color: rgba(40, 54, 61, 0.5);
+        overflow-y: auto; */
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        /* width: 30%; */
+        /* background: var(--white); */
+        max-width: 50%;
+        overflow: hidden;
+        padding: 10px;
+        /* border: 1px solid; */
+        /* border-color: rgba(40, 54, 61, 0.5); */
+        overflow-y: auto;
+        z-index: 50;
+    }
+    .media-item-wrapper{
+        position: relative;
+        box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+        overflow: visible;
+        max-width: 30rem;
+        border-radius: .25rem;
+        &:hover{
+            .item-toolbar.center{
+                .toolbar-icon{
+                    display: flex;
+                }
+            }
+        }
+        .item-toolbar {
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-start;
+            &.right{
+                right: 0;
+            }
+            &.left{
+                left: 0;
+            }
+            &.center{
+                padding: 0;
+                top: calc(50% - 1rem);
+                left: calc(50% - 1rem);
+                .toolbar-icon{
+                    display: none;
+                }
+            }
+            >*{
+                margin-bottom: 3px;
+            }
+        }
+        .toolbar-icon{
+            color: var(--black);
+            padding: .25rem;
+            display: flex;
+            cursor: pointer;
+            border-radius: .25rem;
+            background-color: var(--white);
+            opacity: 70%;
+            .action-description{
+                display: none;
+            }
+            &:hover,
+            &:active{
+                opacity: 100%;
+                color: var(--primary);
+                &.is-danger{
+                    color: var(--danger);
+                }
+               /*  > svg{
+                   width: 36px;
+                   height: 36px;
+               }
+               .action-description{
+                   display: inline-block;
+                   line-height: 1.8;
+                   font-size: 1.2rem;
+               } */
+            }
+
+        }
+
+    }
+    &.uploader-open {
+        .gallery::after {
+            content: "";
+            background: white;
+            opacity: 80%;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .uploader {
+            z-index: 10;
+        }
+    }
+
+    .uploader {
+        padding: 1rem;
+        position: absolute;
+        background-color: white;
+        width: 70%;
+        left: 15%;
+        max-height: 500px;
+        overflow: auto;
+        table{
+            td:first-child{
+                padding: 0;
+                width: 1rem;
+                min-width: 1rem;
+            }
+        }
+
+        .thumb-wrapper{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                object-fit: cover;
+                height: 3rem;
+                width: 6rem;
+            }
+        }
+        .status{
+            padding: 4px 8px;
+            text-transform: uppercase;
+            font-size: 70%;
+            color: var(--white);
+            border-radius: 4px;
+            font-weight: bold;
+            &.is-ready{
+                background-color: var(--primary);
+            }
+            &.is-active{
+                background-color: var(--warning);
+                color: var(--dark);
+            }
+            &.is-success{
+                background-color: var(--success);
+            }
+            &.is-error{
+                background-color: var(--danger);
+            }
+        }
+        .action{
+            color: var(--70);
+            margin-right: .75rem;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            background-color: transparent;
+            &:hover{
+                color: var(--primary);
+            }
+            &.is-danger:hover{
+                color: var(--danger);
+            }
+        }
+    }
+    .gallery{
+        .icon {
+            width: 50px;
+            height: 50px;
+            position: relative;
+
+            &.is-file {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%233c4b5f' d='M67.508 468.467c-58.005-58.013-58.016-151.92 0-209.943l225.011-225.04c44.643-44.645 117.279-44.645 161.92 0 44.743 44.749 44.753 117.186 0 161.944l-189.465 189.49c-31.41 31.413-82.518 31.412-113.926.001-31.479-31.482-31.49-82.453 0-113.944L311.51 110.491c4.687-4.687 12.286-4.687 16.972 0l16.967 16.971c4.685 4.686 4.685 12.283 0 16.969L184.983 304.917c-12.724 12.724-12.73 33.328 0 46.058 12.696 12.697 33.356 12.699 46.054-.001l189.465-189.489c25.987-25.989 25.994-68.06.001-94.056-25.931-25.934-68.119-25.932-94.049 0l-225.01 225.039c-39.249 39.252-39.258 102.795-.001 142.057 39.285 39.29 102.885 39.287 142.162-.028A739446.174 739446.174 0 0 1 439.497 238.49c4.686-4.687 12.282-4.684 16.969.004l16.967 16.971c4.685 4.686 4.689 12.279.004 16.965a755654.128 755654.128 0 0 0-195.881 195.996c-58.034 58.092-152.004 58.093-210.048.041z'%3E%3C/path%3E%3C/svg%3E")
+            }
+        }
+    }
+
+    .object-cover {
+        -o-object-fit: cover !important;
+        object-fit: cover !important;
+    }
+
+    .fill-no-stroke-current{
+        fill: none !important;
+        stroke: currentColor;
+    }
+
+    .h-48 {
+        height: 12rem !important;
+    }
+    .h-36 {
+        height: 8rem !important;
+    }
+
+    .w-1\/10 {
+        width: 10%;
+    }
+    .h-24 {
+        height: 6rem !important;
+    }
+    .h-12 {
+        height: 3rem !important;
+    }
+
+    .slide-enter-active,
+    .slide-leave-active {
+      transition: width 0.5s;
+    }
+
+    .slide-enter,
+    .slide-leave-to {
+      width: 0;
+    }
+
+    .slide-enter-to,
+    .slide-leave {
+      width: 30%;
+    }
+}

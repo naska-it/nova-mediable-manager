@@ -1,0 +1,35 @@
+{
+    "name": "naska-it/nova-mediable-manager",
+    "description": "A Laravel Nova mediable manager tool and field.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "media",
+        "mediable",
+        "image",
+        "field"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "laravel/framework": "~5.8.0|^6.0|^7.0",
+        "intervention/image": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "NaskaIt\\NovaMediableManager\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NaskaIt\\NovaMediableManager\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
